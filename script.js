@@ -1,88 +1,50 @@
-const instagram = "https://www.instagram.com/bloom.ora26/";
+const gallery = document.getElementById("product-gallery");
 
-const products = [
+const repoAPI =
+  "https://api.github.com/repos/bloomorahandmade/bloomoraa/contents/assets";
 
-  {
-    name: "Lavender Bloom",
-    description: "A beautiful handmade floral creation.",
-    image: "assets/product1.jpg"
-  },
+async function loadProducts() {
+  try {
+    const response = await fetch(repoAPI);
 
-  {
-    name: "Pink Daisy",
-    description: "A little flower made with love.",
-    image: "assets/product2.jpg"
-  },
+    if (!response.ok) {
+      throw new Error("Unable to load photos");
+    }
 
-  {
-    name: "Blue Blossom",
-    description: "A colorful handmade creation.",
-    image: "assets/product3.jpg"
-  },
+    const files = await response.json();
 
-  {
-    name: "Pastel Petals",
-    description: "Sweet details and soft pastel colors.",
-    image: "assets/product4.jpg"
-  },
+    const photos = files.filter(file =>
+      /\.(jpg|jpeg|png|webp|gif)$/i.test(file.name) &&
+      !file.name.toLowerCase().includes("about")
+    );
 
-  {
-    name: "Floral Charm",
-    description: "A tiny handmade piece of happiness.",
-    image: "assets/product5.jpg"
-  },
+    gallery.innerHTML = "";
 
-  {
-    name: "Bloom Collection",
-    description: "Unique creations made by hand.",
-    image: "assets/product6.jpg"
+    photos.forEach(photo => {
+      const item = document.createElement("div");
+      item.className = "product";
+
+      const img = document.createElement("img");
+      img.src = photo.download_url;
+      img.alt = "Bloomora handmade creation";
+
+      const link = document.createElement("a");
+      link.className = "button";
+      link.href = "https://www.instagram.com/bloom.ora26/";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "DM US TO KNOW THE PRICE ↗";
+
+      item.appendChild(img);
+      item.appendChild(link);
+
+      gallery.appendChild(item);
+    });
+
+  } catch (error) {
+    gallery.textContent = "Our creations are loading. Please visit again soon!";
+    console.error(error);
   }
+}
 
-];
-
-const gallery = document.getElementById("productGrid");
-
-products.forEach(product => {
-
-  const card = document.createElement("div");
-
-  card.className = "product-card";
-
-  const img = document.createElement("img");
-  img.src = product.image;
-  img.alt = product.name;
-  img.loading = "lazy";
-
-  const info = document.createElement("div");
-  info.className = "product-info";
-
-  const title = document.createElement("h3");
-  title.textContent = product.name;
-
-  const description = document.createElement("p");
-  description.textContent = product.description;
-
-  const link = document.createElement("a");
-  link.href = instagram;
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.textContent = "DM US TO KNOW THE PRICE ↗";
-
-  info.append(title, description, link);
-  card.append(img, info);
-  gallery.appendChild(card);
-
-});
-
-const menuButton = document.querySelector(".menu-toggle");
-const navigation = document.getElementById("navigation");
-
-menuButton.addEventListener("click", () => {
-  navigation.classList.toggle("active");
-});
-
-navigation.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navigation.classList.remove("active");
-  });
-});
+loadProducts();
