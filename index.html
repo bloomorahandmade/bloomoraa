@@ -4,14 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Bloomora | Handmade with Love</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: #fff8fb;
@@ -36,7 +44,10 @@
       color: #cf6da9;
     }
 
-    nav { display: flex; gap: 28px; }
+    nav {
+      display: flex;
+      gap: 28px;
+    }
 
     nav a {
       color: #76527f;
@@ -44,7 +55,11 @@
       font-size: 14px;
     }
 
-    nav a:hover { color: #d16da9; }
+    nav a:hover {
+      color: #d16da9;
+    }
+
+    /* HERO */
 
     .hero {
       min-height: 490px;
@@ -53,13 +68,18 @@
       align-items: center;
       justify-content: space-around;
       gap: 30px;
-      background:
-        radial-gradient(circle at 80% 40%, #fff9ff 0 17%, transparent 17.5%),
-        linear-gradient(125deg, #f1dcf5, #fce8ef 55%, #eadcf7);
+      background: linear-gradient(
+        125deg,
+        #f1dcf5,
+        #fce8ef 55%,
+        #eadcf7
+      );
       overflow: hidden;
     }
 
-    .hero-content { max-width: 480px; }
+    .hero-content {
+      max-width: 480px;
+    }
 
     .eyebrow {
       color: #d16da9;
@@ -89,7 +109,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 130px;
+      font-size: 110px;
       box-shadow: 0 15px 45px #9d6c9c25;
     }
 
@@ -111,7 +131,11 @@
       transform: translateY(-2px);
     }
 
-    section { padding: 65px 7%; }
+    section {
+      padding: 65px 7%;
+    }
+
+    /* GALLERY */
 
     .section-heading {
       text-align: center;
@@ -137,19 +161,24 @@
       margin: auto;
     }
 
-    .product { text-align: center; }
+    .product {
+      text-align: center;
+      min-width: 0;
+    }
 
     .product img {
       width: 100%;
       aspect-ratio: 1;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
       display: block;
       background: #f2e2ed;
       transition: .3s;
     }
 
-    .product img:hover { transform: translateY(-5px); }
+    .product img:hover {
+      transform: translateY(-5px);
+    }
 
     .product .button {
       margin-top: 12px;
@@ -157,8 +186,14 @@
       font-size: 10px;
     }
 
+    /* ABOUT */
+
     .about {
-      background: linear-gradient(120deg, #f0e0f6, #fce9f0);
+      background: linear-gradient(
+        120deg,
+        #f0e0f6,
+        #fce9f0
+      );
       display: flex;
       align-items: center;
       justify-content: center;
@@ -173,7 +208,9 @@
       transform: rotate(-3deg);
     }
 
-    .about-text { max-width: 490px; }
+    .about-text {
+      max-width: 490px;
+    }
 
     .about-text h2 {
       font: 35px 'Playfair Display', serif;
@@ -186,14 +223,20 @@
       font-size: 14px;
     }
 
-    .contact { text-align: center; }
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
 
     .contact h2 {
       font: 36px 'Playfair Display', serif;
       margin: 12px 0;
     }
 
-    .contact p { margin-bottom: 22px; }
+    .contact p {
+      margin-bottom: 22px;
+    }
 
     .instagram {
       display: block;
@@ -201,6 +244,8 @@
       color: #c969a5;
       text-decoration: none;
     }
+
+    /* FOOTER */
 
     footer {
       padding: 28px;
@@ -214,132 +259,260 @@
       margin-top: 8px;
     }
 
+    /* MOBILE */
+
     @media(max-width: 800px) {
-      .products { grid-template-columns: repeat(2, 1fr); }
-      .hero { text-align: center; flex-direction: column; }
-      .hero-art { width: 260px; font-size: 90px; }
-      .hero h1 { font-size: 70px; }
-      .about { flex-direction: column; text-align: center; }
-      .about-image { width: 240px; }
-      nav { gap: 12px; }
-      nav a { font-size: 11px; }
-      header { padding: 14px 4%; }
-      .logo { font-size: 30px; }
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .hero-art {
+        width: 260px;
+        font-size: 90px;
+      }
+
+      .hero h1 {
+        font-size: 70px;
+      }
+
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-image {
+        width: 240px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      header {
+        padding: 14px 4%;
+      }
+
+      .logo {
+        font-size: 30px;
+      }
     }
 
     @media(max-width: 380px) {
-      nav { gap: 8px; }
-      nav a { font-size: 10px; }
-      .product .button { padding: 9px 10px; font-size: 9px; }
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .product .button {
+        padding: 9px 10px;
+        font-size: 9px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">🌸 Bloomora</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#collections">Collections</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- HEADER -->
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="eyebrow">HANDMADE WITH LOVE ♡</div>
-    <h1>Bloomora</h1>
-    <p>Little creations,<br>made with magic.</p>
-    <a href="#collections" class="button">EXPLORE COLLECTION →</a>
-  </div>
+  <header>
+    <div class="logo">🌸 Bloomora</div>
 
-  <div class="hero-art">🌸🦋🌷</div>
-</section>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="collections">
-  <div class="section-heading">
-    <h2>OUR LITTLE CREATIONS</h2>
-    <p>Every piece is special, just like you.</p>
-  </div>
+  <!-- HOMEPAGE -->
 
-  <div class="products">
+  <section class="hero" id="home">
 
-    <div class="product">
-      <img src="assets/product1.jpg" alt="Handmade creation">
-      <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">DM US TO KNOW THE PRICE ↗</a>
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        HANDMADE WITH LOVE ♡
+      </div>
+
+      <h1>Bloomora</h1>
+
+      <p>
+        Little creations,<br>
+        made with magic.
+      </p>
+
+      <a href="#collections" class="button">
+        EXPLORE COLLECTION →
+      </a>
+
     </div>
 
-    <div class="product">
-      <img src="assets/product2.jpg" alt="Handmade creation">
-      <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">DM US TO KNOW THE PRICE ↗</a>
+    <div class="hero-art">
+      🌸🦋🌷
     </div>
 
-    <div class="product">
-      <img src="assets/product3.jpg" alt="Handmade creation">
-      <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">DM US TO KNOW THE PRICE ↗</a>
+  </section>
+
+  <!-- PRODUCT COLLECTION -->
+
+  <section id="collections">
+
+    <div class="section-heading">
+      <h2>OUR LITTLE CREATIONS</h2>
+      <p>Every piece is special, just like you.</p>
     </div>
 
-    <div class="product">
-      <img src="assets/product4.jpg" alt="Handmade creation">
-      <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">DM US TO KNOW THE PRICE ↗</a>
+    <div class="products" id="product-gallery">
+      <!-- Products are automatically added here -->
     </div>
 
-    <div class="product">
-      <img src="assets/product5.jpg" alt="Handmade creation">
-      <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">DM US TO KNOW THE PRICE ↗</a>
+  </section>
+
+  <!-- ABOUT US -->
+
+  <section class="about" id="about">
+
+    <img
+      class="about-image"
+      src="assets/about.jpg"
+      alt="Bloomora handmade creations"
+    >
+
+    <div class="about-text">
+
+      <div class="eyebrow">
+        OUR LITTLE STORY
+      </div>
+
+      <h2>
+        Not just handmade. <i>Heartmade.</i>
+      </h2>
+
+      <p>
+        Welcome to Bloomora, a little world of creativity,
+        flowers and handmade happiness.
+      </p>
+
+      <p>
+        Every creation is made with patience, love
+        and attention to detail. We believe even the
+        smallest things can carry the biggest feelings.
+      </p>
+
+      <p>
+        Thank you for supporting our little handmade world. ♡
+      </p>
+
     </div>
 
-    <div class="product">
-      <img src="assets/product6.jpg" alt="Handmade creation">
-      <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">DM US TO KNOW THE PRICE ↗</a>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="eyebrow">
+      HAVE SOMETHING IN MIND?
     </div>
 
-    <div class="product">
-      <img src="assets/product7.jpg" alt="Handmade creation">
-      <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">DM US TO KNOW THE PRICE ↗</a>
-    </div>
+    <h2>Let's create something beautiful.</h2>
 
-    <div class="product">
-      <img src="assets/product8.jpg" alt="Handmade creation">
-      <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">DM US TO KNOW THE PRICE ↗</a>
-    </div>
+    <p>
+      For orders, prices and custom creations,
+      connect with us.
+    </p>
 
-  </div>
-</section>
+    <a
+      class="button"
+      href="https://www.instagram.com/bloom.ora26/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      DM US ON INSTAGRAM ↗
+    </a>
 
-<section class="about" id="about">
-  <img class="about-image" src="assets/about.jpg" alt="Bloomora handmade creations">
+    <a
+      class="instagram"
+      href="https://www.instagram.com/bloom.ora26/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ◎ @bloom.ora26
+    </a>
 
-  <div class="about-text">
-    <div class="eyebrow">OUR LITTLE STORY</div>
-    <h2>Not just handmade. <i>Heartmade.</i></h2>
-    <p>Welcome to Bloomora, a little world of creativity, flowers and handmade happiness.</p>
-    <p>Every creation is made with patience, love and attention to detail. We believe even the smallest things can carry the biggest feelings.</p>
-    <p>Thank you for supporting our little handmade world. ♡</p>
-  </div>
-</section>
+  </section>
 
-<section class="contact" id="contact">
-  <div class="eyebrow">HAVE SOMETHING IN MIND?</div>
-  <h2>Let's create something beautiful.</h2>
-  <p>For orders, prices and custom creations, connect with us.</p>
+  <!-- FOOTER -->
 
-  <a class="button" href="https://www.instagram.com/bloom.ora26/" target="_blank">
-    DM US ON INSTAGRAM ↗
-  </a>
+  <footer>
 
-  <a class="instagram" href="https://www.instagram.com/bloom.ora26/" target="_blank">
-    ◎ @bloom.ora26
-  </a>
-</section>
+    <div class="logo">Bloomora ♡</div>
 
-<footer>
-  <div class="logo">Bloomora ♡</div>
-  Handmade with love.
-  <p>© 2026 Bloomora. All rights reserved.</p>
-</footer>
+    Handmade with love.
+
+    <p>© 2026 Bloomora. All rights reserved.</p>
+
+  </footer>
+
+  <!-- DYNAMIC PRODUCT GALLERY -->
+
+  <script>
+
+    // ADD YOUR PHOTO FILENAMES HERE
+
+    const products = [
+      "product1.jpg",
+      "product2.jpg",
+      "product3.jpg"
+    ];
+
+    const gallery = document.getElementById("product-gallery");
+
+    products.forEach((photo) => {
+
+      const item = document.createElement("div");
+      item.className = "product";
+
+      const img = document.createElement("img");
+
+      img.src = "assets/" + photo;
+      img.alt = "Bloomora handmade creation";
+
+      img.onerror = function() {
+        item.remove();
+      };
+
+      const link = document.createElement("a");
+
+      link.className = "button";
+      link.href = "https://www.instagram.com/bloom.ora26/";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+
+      link.textContent = "DM US TO KNOW THE PRICE ↗";
+
+      item.appendChild(img);
+      item.appendChild(link);
+
+      gallery.appendChild(item);
+
+    });
+
+  </script>
 
 </body>
 </html>
