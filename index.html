@@ -4,88 +4,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff5fa">
-  <title>Bloomora | Handmade with Love</title>
-  <meta name="description" content="Discover cute handmade creations by Bloomora.">
 
+  <title>Bloomora | Handmade with Love</title>
+
+  <meta name="description" content="Bloomora Handmade - Beautiful handmade creations made with love.">
+
+  <!-- Original fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Original stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header class="navbar">
-    <a href="#" class="logo">Bloomora<span>♡</span></a>
-    <nav>
+  <!-- HEADER -->
+
+  <header>
+    <a href="#home" class="logo">Bloomora ♡</a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav id="navigation">
       <a href="#home">Home</a>
-      <a href="#gallery">Our Creations</a>
-      <a href="#about">About</a>
+      <a href="#shop">Our Creations</a>
+      <a href="#about">About Us</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <p class="small-heading">A LITTLE WORLD OF HANDMADE MAGIC</p>
-        <h1>Made with love,<br>created with <span>Bloomora.</span></h1>
-        <p class="hero-description">
-          Little handmade things that bring a little more beauty
-          into your everyday life.
-        </p>
-        <a href="#gallery" class="main-button">EXPLORE OUR CREATIONS ♡</a>
-      </div>
-      <div class="hero-flower">🌷</div>
-      <span class="decor decor-one">✿</span>
-      <span class="decor decor-two">♡</span>
-      <span class="decor decor-three">✧</span>
-    </section>
 
-    <section class="gallery-section" id="gallery">
-      <p class="small-heading">MADE BY HAND, WITH HEART</p>
+  <!-- HERO BANNER -->
+
+  <section class="hero" id="home">
+
+    <img
+      src="assets/bloomora-banner.jpg"
+      alt="Bloomora handmade floral creations"
+      class="banner-image"
+    >
+
+    <div class="hero-content">
+
+      <p>HANDMADE WITH LOVE</p>
+
+      <h1>
+        Little things,<br>
+        made with a lot of love.
+      </h1>
+
+      <a href="#shop" class="main-button">
+        EXPLORE OUR COLLECTION
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- SHOP / PRODUCT GALLERY -->
+
+  <section class="shop" id="shop">
+
+    <div class="heading">
+
+      <p>MADE WITH LOVE</p>
+
       <h2>Our Little Creations</h2>
-      <p class="section-description">
-        Every piece is made with love. Find your favourite!
+
+      <span>
+        Every piece has a little story of its own.
+      </span>
+
+    </div>
+
+    <!-- JavaScript automatically loads photos here -->
+
+    <div class="product-grid" id="productGrid">
+      <p>Loading our creations... ♡</p>
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT SECTION -->
+
+  <section class="about" id="about">
+
+    <div class="about-image">
+
+      <img
+        src="assets/about.jpg"
+        alt="Bloomora handmade workspace"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="about-text">
+
+      <p>OUR LITTLE STORY</p>
+
+      <h2>
+        Handmade with <i>love</i>,<br>
+        created with care.
+      </h2>
+
+      <p>
+        Welcome to Bloomora! We believe that beautiful things
+        don't need to be perfect. They just need to be made
+        with love.
       </p>
 
-      <div class="products" id="product-gallery">
-        <p class="loading">Loading our creations... ♡</p>
-      </div>
-    </section>
+      <p>
+        Every creation is thoughtfully handmade, with care
+        and creativity in every little detail.
+      </p>
 
-    <section class="about-section" id="about">
-      <div class="about-flower">🌸</div>
-      <div>
-        <p class="small-heading">A LITTLE ABOUT US</p>
-        <h2>Handmade, with a whole lot of love.</h2>
-        <p>
-          Welcome to Bloomora! We believe that the little things
-          make life beautiful. Each creation is made with care,
-          creativity and love.
-        </p>
-      </div>
-    </section>
+    </div>
 
-    <section class="contact-section" id="contact">
-      <p class="small-heading">HAVE SOMETHING IN MIND?</p>
-      <h2>Let's make something beautiful!</h2>
-      <p>Want to know the price or place an order?</p>
-      <a
-        href="https://www.instagram.com/bloom.ora26/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="main-button"
-      >
-        MESSAGE US ON INSTAGRAM ↗
-      </a>
-    </section>
-  </main>
+  </section>
+
+
+  <!-- CONTACT SECTION -->
+
+  <section class="contact" id="contact">
+
+    <p>LET'S CONNECT</p>
+
+    <h2>
+      Have something <i>in mind?</i>
+    </h2>
+
+    <p>
+      We'd love to hear from you. Message us for prices
+      and orders.
+    </p>
+
+    <a
+      href="https://www.instagram.com/bloom.ora26/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="main-button"
+    >
+      MESSAGE US ON INSTAGRAM ↗
+    </a>
+
+    <p class="instagram">
+      Instagram: @bloom.ora26
+    </p>
+
+  </section>
+
+
+  <!-- FOOTER -->
 
   <footer>
-    <a href="#home" class="footer-logo">Bloomora ♡</a>
-    <p>Handmade with love, just for you.</p>
-    <p class="copyright">© 2026 Bloomora Handmade</p>
+
+    <h3>Bloomora ♡</h3>
+
+    <p>Little creations, made with love.</p>
+
+    <p>© 2026 Bloomora Handmade. All rights reserved.</p>
+
   </footer>
 
+
+  <!-- JAVASCRIPT -->
+
   <script src="script.js"></script>
+
 </body>
 </html>
+
