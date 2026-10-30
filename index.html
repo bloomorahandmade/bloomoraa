@@ -4,515 +4,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="theme-color" content="#fff5fa">
   <title>Bloomora | Handmade with Love</title>
+  <meta name="description" content="Discover cute handmade creations by Bloomora.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #fff8fb;
-      color: #76527f;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,248,251,.96);
-      padding: 17px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 15px #9c6b9015;
-    }
-
-    .logo {
-      font: 38px 'Great Vibes', cursive;
-      color: #cf6da9;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-    }
-
-    nav a {
-      color: #76527f;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #d16da9;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 490px;
-      padding: 70px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      gap: 30px;
-      background: linear-gradient(
-        125deg,
-        #f1dcf5,
-        #fce8ef 55%,
-        #eadcf7
-      );
-      overflow: hidden;
-    }
-
-    .hero-content {
-      max-width: 480px;
-    }
-
-    .eyebrow {
-      color: #d16da9;
-      letter-spacing: 5px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .hero h1 {
-      font: 88px 'Great Vibes', cursive;
-      color: #c969a5;
-      margin: 15px 0 0;
-    }
-
-    .hero p {
-      font: italic 24px 'Playfair Display', serif;
-      line-height: 1.5;
-      margin-bottom: 25px;
-    }
-
-    .hero-art {
-      width: min(390px, 42vw);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: #fff9f5;
-      border: 8px solid #ffffff80;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 110px;
-      box-shadow: 0 15px 45px #9d6c9c25;
-    }
-
-    .button {
-      display: inline-block;
-      background: #cb6ba6;
-      color: white;
-      text-decoration: none;
-      padding: 14px 27px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      transition: .25s;
-    }
-
-    .button:hover {
-      background: #a94d8a;
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 65px 7%;
-    }
-
-    /* GALLERY */
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .section-heading h2 {
-      font: 32px 'Playfair Display', serif;
-      color: #bd669e;
-      letter-spacing: 4px;
-    }
-
-    .section-heading p {
-      margin-top: 9px;
-      font: italic 16px 'Playfair Display', serif;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px 20px;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .product {
-      text-align: center;
-      min-width: 0;
-    }
-
-    .product img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 12px;
-      display: block;
-      background: #f2e2ed;
-      transition: .3s;
-    }
-
-    .product img:hover {
-      transform: translateY(-5px);
-    }
-
-    .product .button {
-      margin-top: 12px;
-      padding: 11px 17px;
-      font-size: 10px;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: linear-gradient(
-        120deg,
-        #f0e0f6,
-        #fce9f0
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 55px;
-    }
-
-    .about-image {
-      width: 300px;
-      max-width: 100%;
-      border: 10px solid white;
-      border-radius: 8px;
-      transform: rotate(-3deg);
-    }
-
-    .about-text {
-      max-width: 490px;
-    }
-
-    .about-text h2 {
-      font: 35px 'Playfair Display', serif;
-      margin: 12px 0 18px;
-    }
-
-    .about-text p {
-      line-height: 1.9;
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact h2 {
-      font: 36px 'Playfair Display', serif;
-      margin: 12px 0;
-    }
-
-    .contact p {
-      margin-bottom: 22px;
-    }
-
-    .instagram {
-      display: block;
-      margin-top: 18px;
-      color: #c969a5;
-      text-decoration: none;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 28px;
-      text-align: center;
-      background: #f0e0f6;
-      font: 17px 'Playfair Display', serif;
-    }
-
-    footer p {
-      font: 12px 'DM Sans', sans-serif;
-      margin-top: 8px;
-    }
-
-    /* MOBILE */
-
-    @media(max-width: 800px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero {
-        text-align: center;
-        flex-direction: column;
-      }
-
-      .hero-art {
-        width: 260px;
-        font-size: 90px;
-      }
-
-      .hero h1 {
-        font-size: 70px;
-      }
-
-      .about {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .about-image {
-        width: 240px;
-      }
-
-      nav {
-        gap: 12px;
-      }
-
-      nav a {
-        font-size: 11px;
-      }
-
-      header {
-        padding: 14px 4%;
-      }
-
-      .logo {
-        font-size: 30px;
-      }
-    }
-
-    @media(max-width: 380px) {
-      nav {
-        gap: 8px;
-      }
-
-      nav a {
-        font-size: 10px;
-      }
-
-      .product .button {
-        padding: 9px 10px;
-        font-size: 9px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-
-  <header>
-    <div class="logo">🌸 Bloomora</div>
-
+  <header class="navbar">
+    <a href="#" class="logo">Bloomora<span>♡</span></a>
     <nav>
       <a href="#home">Home</a>
-      <a href="#collections">Collections</a>
-      <a href="#about">About Us</a>
+      <a href="#gallery">Our Creations</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- HOMEPAGE -->
-
-  <section class="hero" id="home">
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-        HANDMADE WITH LOVE ♡
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="small-heading">A LITTLE WORLD OF HANDMADE MAGIC</p>
+        <h1>Made with love,<br>created with <span>Bloomora.</span></h1>
+        <p class="hero-description">
+          Little handmade things that bring a little more beauty
+          into your everyday life.
+        </p>
+        <a href="#gallery" class="main-button">EXPLORE OUR CREATIONS ♡</a>
       </div>
+      <div class="hero-flower">🌷</div>
+      <span class="decor decor-one">✿</span>
+      <span class="decor decor-two">♡</span>
+      <span class="decor decor-three">✧</span>
+    </section>
 
-      <h1>Bloomora</h1>
-
-      <p>
-        Little creations,<br>
-        made with magic.
+    <section class="gallery-section" id="gallery">
+      <p class="small-heading">MADE BY HAND, WITH HEART</p>
+      <h2>Our Little Creations</h2>
+      <p class="section-description">
+        Every piece is made with love. Find your favourite!
       </p>
 
-      <a href="#collections" class="button">
-        EXPLORE COLLECTION →
+      <div class="products" id="product-gallery">
+        <p class="loading">Loading our creations... ♡</p>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-flower">🌸</div>
+      <div>
+        <p class="small-heading">A LITTLE ABOUT US</p>
+        <h2>Handmade, with a whole lot of love.</h2>
+        <p>
+          Welcome to Bloomora! We believe that the little things
+          make life beautiful. Each creation is made with care,
+          creativity and love.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <p class="small-heading">HAVE SOMETHING IN MIND?</p>
+      <h2>Let's make something beautiful!</h2>
+      <p>Want to know the price or place an order?</p>
+      <a
+        href="https://www.instagram.com/bloom.ora26/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="main-button"
+      >
+        MESSAGE US ON INSTAGRAM ↗
       </a>
-
-    </div>
-
-    <div class="hero-art">
-      🌸🦋🌷
-    </div>
-
-  </section>
-
-  <!-- PRODUCT COLLECTION -->
-
-  <section id="collections">
-
-    <div class="section-heading">
-      <h2>OUR LITTLE CREATIONS</h2>
-      <p>Every piece is special, just like you.</p>
-    </div>
-
-    <div class="products" id="product-gallery">
-      <!-- Products are automatically added here -->
-    </div>
-
-  </section>
-
-  <!-- ABOUT US -->
-
-  <section class="about" id="about">
-
-    <img
-      class="about-image"
-      src="assets/about.jpg"
-      alt="Bloomora handmade creations"
-    >
-
-    <div class="about-text">
-
-      <div class="eyebrow">
-        OUR LITTLE STORY
-      </div>
-
-      <h2>
-        Not just handmade. <i>Heartmade.</i>
-      </h2>
-
-      <p>
-        Welcome to Bloomora, a little world of creativity,
-        flowers and handmade happiness.
-      </p>
-
-      <p>
-        Every creation is made with patience, love
-        and attention to detail. We believe even the
-        smallest things can carry the biggest feelings.
-      </p>
-
-      <p>
-        Thank you for supporting our little handmade world. ♡
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-
-  <section class="contact" id="contact">
-
-    <div class="eyebrow">
-      HAVE SOMETHING IN MIND?
-    </div>
-
-    <h2>Let's create something beautiful.</h2>
-
-    <p>
-      For orders, prices and custom creations,
-      connect with us.
-    </p>
-
-    <a
-      class="button"
-      href="https://www.instagram.com/bloom.ora26/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      DM US ON INSTAGRAM ↗
-    </a>
-
-    <a
-      class="instagram"
-      href="https://www.instagram.com/bloom.ora26/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      ◎ @bloom.ora26
-    </a>
-
-  </section>
-
-  <!-- FOOTER -->
+    </section>
+  </main>
 
   <footer>
-
-    <div class="logo">Bloomora ♡</div>
-
-    Handmade with love.
-
-    <p>© 2026 Bloomora. All rights reserved.</p>
-
+    <a href="#home" class="footer-logo">Bloomora ♡</a>
+    <p>Handmade with love, just for you.</p>
+    <p class="copyright">© 2026 Bloomora Handmade</p>
   </footer>
 
-  <!-- DYNAMIC PRODUCT GALLERY -->
-
-  <script>
-
-    // ADD YOUR PHOTO FILENAMES HERE
-
-    const products = [
-      "product1.jpg",
-      "product2.jpg",
-      "product3.jpg"
-    ];
-
-    const gallery = document.getElementById("product-gallery");
-
-    products.forEach((photo) => {
-
-      const item = document.createElement("div");
-      item.className = "product";
-
-      const img = document.createElement("img");
-
-      img.src = "assets/" + photo;
-      img.alt = "Bloomora handmade creation";
-
-      img.onerror = function() {
-        item.remove();
-      };
-
-      const link = document.createElement("a");
-
-      link.className = "button";
-      link.href = "https://www.instagram.com/bloom.ora26/";
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-
-      link.textContent = "DM US TO KNOW THE PRICE ↗";
-
-      item.appendChild(img);
-      item.appendChild(link);
-
-      gallery.appendChild(item);
-
-    });
-
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
