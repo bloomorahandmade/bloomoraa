@@ -1,4 +1,5 @@
-{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -55,6 +56,8 @@ nav a:hover {
   background: none;
   border: none;
   font-size: 25px;
+  color: #574450;
+  cursor: pointer;
 }
 
 /* HERO BANNER */
@@ -178,20 +181,8 @@ nav a:hover {
 }
 
 .product-info {
-  padding: 22px;
-}
-
-.product-info h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 21px;
-  margin-bottom: 10px;
-}
-
-.product-info p {
-  color: #907c88;
-  font-size: 13px;
-  line-height: 1.7;
-  margin-bottom: 17px;
+  padding: 18px 22px;
+  text-align: center;
 }
 
 .product-info a {
@@ -200,6 +191,17 @@ nav a:hover {
   font-size: 11px;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.product-info a:hover {
+  color: #a95f80;
+}
+
+.gallery-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #907c88;
+  padding: 30px;
 }
 
 /* ABOUT */
@@ -283,7 +285,6 @@ footer p {
 /* MOBILE */
 
 @media (max-width: 768px) {
-
   header {
     padding: 18px 6%;
   }
@@ -340,10 +341,6 @@ footer p {
     padding: 14px;
   }
 
-  .product-info h3 {
-    font-size: 17px;
-  }
-
   .about {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -351,7 +348,9 @@ footer p {
 
   .about-image img {
     height: 300px;
-  }                                                                                                                                                              .heading h2,
+  }
+
+  .heading h2,
   .about-text h2,
   .contact h2 {
     font-size: 30px;
@@ -363,3 +362,4 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+
