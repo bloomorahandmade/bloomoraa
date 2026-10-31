@@ -1,4 +1,3 @@
-
 const instagram = "https://www.instagram.com/bloom.ora26/";
 
 const gallery = document.getElementById("productGrid");
@@ -33,45 +32,42 @@ async function loadProducts() {
 
     if (photos.length === 0) {
       gallery.innerHTML =
-        '<p class="gallery-message">Our little creations are coming soon! ♡</p>';
+        "<p>Our little creations are coming soon! ♡</p>";
       return;
     }
 
     photos.forEach(photo => {
-      const card = document.createElement("div");
-      card.className = "product-card";
+      const item = document.createElement("div");
+      item.className = "product";
 
       const img = document.createElement("img");
       img.src = photo.download_url;
-      img.alt = "Bloomora handmade creation";
+      img.alt = "Handmade creation";
       img.loading = "lazy";
 
-      const info = document.createElement("div");
-      info.className = "product-info";
-
       const link = document.createElement("a");
+      link.className = "button";
       link.href = instagram;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.textContent = "DM US TO KNOW THE PRICE ↗";
 
       img.onerror = () => {
-        card.remove();
+        item.remove();
         console.error("Image failed to load:", photo.name);
       };
 
-      info.appendChild(link);
-      card.appendChild(img);
-      card.appendChild(info);
+      item.appendChild(img);
+      item.appendChild(link);
 
-      gallery.appendChild(card);
+      gallery.appendChild(item);
     });
 
   } catch (error) {
     console.error("Bloomora error:", error);
 
     gallery.innerHTML =
-      '<p class="gallery-message">Photos could not load. Please try again later. ♡</p>';
+      "<p>Photos could not load. Please try again later. ♡</p>";
   }
 }
 
@@ -80,7 +76,7 @@ loadProducts();
 /* MOBILE NAVIGATION */
 
 const menuButton = document.getElementById("menuToggle");
-const navigation = document.getElementById("navigation");
+const navigation = document.querySelector("nav");
 
 if (menuButton && navigation) {
   menuButton.addEventListener("click", () => {
@@ -93,4 +89,3 @@ if (menuButton && navigation) {
     });
   });
 }
-
