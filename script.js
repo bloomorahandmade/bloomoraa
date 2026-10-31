@@ -1,98 +1,88 @@
-
 const instagram = "https://www.instagram.com/bloom.ora26/";
+
+const products = [
+
+  {
+    name: "Lavender Bloom",
+    description: "A beautiful handmade floral creation.",
+    image: "assets/product1.jpg"
+  },
+
+  {
+    name: "Pink Daisy",
+    description: "A little flower made with love.",
+    image: "assets/product2.jpg"
+  },
+
+  {
+    name: "Blue Blossom",
+    description: "A colorful handmade creation.",
+    image: "assets/product3.jpg"
+  },
+
+  {
+    name: "Pastel Petals",
+    description: "Sweet details and soft pastel colors.",
+    image: "assets/product4.jpg"
+  },
+
+  {
+    name: "Floral Charm",
+    description: "A tiny handmade piece of happiness.",
+    image: "assets/product5.jpg"
+  },
+
+  {
+    name: "Bloom Collection",
+    description: "Unique creations made by hand.",
+    image: "assets/product6.jpg"
+  }
+
+];
 
 const gallery = document.getElementById("productGrid");
 
-const repoAPI =
-  "https://api.github.com/repos/bloomorahandmade/bloomoraa/contents/assets";
+products.forEach(product => {
 
-async function loadProducts() {
-  if (!gallery) return;
+  const card = document.createElement("div");
 
-  try {
-    const response = await fetch(repoAPI);
+  card.className = "product-card";
 
-    if (!response.ok) {
-      throw new Error("GitHub photo folder could not be accessed.");
-    }
+  const img = document.createElement("img");
+  img.src = product.image;
+  img.alt = product.name;
+  img.loading = "lazy";
 
-    const files = await response.json();
+  const info = document.createElement("div");
+  info.className = "product-info";
 
-    const photos = files
-      .filter(file => {
-        const name = file.name.toLowerCase();
+  const title = document.createElement("h3");
+  title.textContent = product.name;
 
-        return (
-          file.type === "file" &&
-          /\.(jpg|jpeg|png|webp|gif|avif)$/i.test(name) &&
-          name !== "about.jpg" &&
-          name !== "bloomora-banner.jpg"
-        );
-      })
-      .sort((a, b) => a.name.localeCompare(b.name));
+  const description = document.createElement("p");
+  description.textContent = product.description;
 
-    gallery.innerHTML = "";
+  const link = document.createElement("a");
+  link.href = instagram;
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.textContent = "DM US TO KNOW THE PRICE ↗";
 
-    if (photos.length === 0) {
-      gallery.innerHTML =
-        '<p class="gallery-message">Our creations are coming soon! ♡</p>';
-      return;
-    }
+  info.append(title, description, link);
+  card.append(img, info);
+  gallery.appendChild(card);
 
-    photos.forEach(photo => {
-      const card = document.createElement("div");
-      card.className = "product-card";
-
-      const img = document.createElement("img");
-      img.src = photo.download_url;
-      img.alt = "Bloomora handmade creation";
-      img.loading = "lazy";
-
-      img.onerror = () => {
-        card.remove();
-        console.error("Could not load image:", photo.name);
-      };
-
-      const info = document.createElement("div");
-      info.className = "product-info";
-
-      const link = document.createElement("a");
-      link.href = instagram;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = "DM US TO KNOW THE PRICE ↗";
-
-      info.appendChild(link);
-      card.appendChild(img);
-      card.appendChild(info);
-
-      gallery.appendChild(card);
-    });
-
-  } catch (error) {
-    console.error("Bloomora gallery error:", error);
-
-    gallery.innerHTML =
-      '<p class="gallery-message">Unable to load photos. Please visit our Instagram! ♡</p>';
-  }
-}
-
-loadProducts();
-
-/* MOBILE MENU */
+});
 
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.getElementById("navigation");
 
-if (menuButton && navigation) {
-  menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("active");
-  });
+menuButton.addEventListener("click", () => {
+  navigation.classList.toggle("active");
+});
 
-  navigation.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navigation.classList.remove("active");
-    });
+navigation.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navigation.classList.remove("active");
   });
-}
-
+});
