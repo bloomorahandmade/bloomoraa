@@ -6,6 +6,11 @@ const repoAPI =
   "https://api.github.com/repos/bloomorahandmade/bloomoraa/contents/assets";
 
 async function loadProducts() {
+  if (!gallery) {
+    console.error("productGrid was not found in index.html");
+    return;
+  }
+
   try {
     const response = await fetch(repoAPI);
 
@@ -16,23 +21,16 @@ async function loadProducts() {
     const files = await response.json();
 
     const photos = files
-      .filter(file => {
-        const name = file.name.toLowerCase();
-
-        return (
-          file.type === "file" &&
-          /\.(jpg|jpeg|png|webp|gif|avif)$/i.test(name) &&
-          name !== "about.jpg" &&
-          name !== "bloomora-banner.jpg"
-        );
-      })
+      .filter(file =>
+        file.type === "file" &&
+        /\.(jpg|jpeg|png|webp|gif|avif)$/i.test(file.name)
+      )
       .sort((a, b) => a.name.localeCompare(b.name));
 
     gallery.innerHTML = "";
 
     if (photos.length === 0) {
-      gallery.innerHTML =
-        "<p>Our little creations are coming soon! ♡</p>";
+      gallery.innerHTML = "<p>Our little creations are coming soon! ♡</p>";
       return;
     }
 
@@ -53,39 +51,20 @@ async function loadProducts() {
       link.textContent = "DM US TO KNOW THE PRICE ↗";
 
       img.onerror = () => {
+        console.error("Image failed:", photo.name);
         item.remove();
-        console.error("Image failed to load:", photo.name);
       };
 
       item.appendChild(img);
       item.appendChild(link);
-
       gallery.appendChild(item);
     });
 
   } catch (error) {
-    console.error("Bloomora error:", error);
-
+    console.error(error);
     gallery.innerHTML =
       "<p>Photos could not load. Please try again later. ♡</p>";
   }
 }
 
 loadProducts();
-
-/* MOBILE NAVIGATION */
-
-const menuButton = document.getElementById("menuToggle");
-const navigation = document.querySelector("nav");
-
-if (menuButton && navigation) {
-  menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("active");
-  });
-
-  navigation.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navigation.classList.remove("active");
-    });
-  });
-}
